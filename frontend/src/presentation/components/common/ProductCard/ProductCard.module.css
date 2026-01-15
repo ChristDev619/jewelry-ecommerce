@@ -111,11 +111,7 @@
   height: var(--card-content-height);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-}
-
-.contentTop {
-  flex: 1;
+  gap: var(--spacing-sm);
 }
 
 .title {
@@ -132,6 +128,14 @@
   text-overflow: ellipsis;
 }
 
+/* Price Row - Price and Badge on Same Line */
+.priceRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+}
+
 .price {
   font-weight: 600;
   font-size: 1.25rem;
@@ -141,25 +145,22 @@
   letter-spacing: 0.3px;
 }
 
-/* Badge */
-.badgeContainer {
-  height: 28px;
-  margin-top: var(--spacing-sm);
-}
-
+/* New Badge - Inline with Price */
 .badge {
   display: inline-block;
-  padding: 6px 14px;
+  padding: 5px 12px;
   background: linear-gradient(135deg, #8B7355 0%, #a08968 100%);
   color: #ffffff;
   border-radius: 6px;
-  font-size: var(--font-size-xs);
+  font-size: 0.65rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
   box-shadow: 
     0 2px 6px rgba(139, 115, 85, 0.25),
     0 1px 3px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 /* Responsive */

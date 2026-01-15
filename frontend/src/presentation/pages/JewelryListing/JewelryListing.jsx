@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { Box, Typography, CircularProgress } from '@mui/material';
 import { motion } from 'framer-motion';
 import { useParams, useNavigate } from 'react-router-dom';
@@ -9,6 +10,7 @@ import useJewelryFilters from '../../hooks/useJewelryFilters';
 import useWishlist from '../../hooks/useWishlist';
 import { useProducts } from '../../hooks/data';
 import useStore from '../../store/store';
+import { sortJewelry } from '../../../shared/utils/filter.utils';
 
 /**
  * JewelryListing Page
@@ -20,15 +22,21 @@ const JewelryListing = () => {
   const { filters, maxDeliveryDays } = useJewelryFilters();
   const { toggleWishlist, isInWishlist } = useWishlist();
   const showDeliveryDate = useStore((state) => state.showDeliveryDate);
+  const sortBy = useStore((state) => state.sortBy);
 
   // Fetch products from Strapi using GraphQL
-  const { products, loading, error } = useProducts({
+  const { products: rawProducts, loading, error } = useProducts({
     filters: {
       ...filters,
       category: category || filters.category,
     },
     sort: ['popularity:desc'],
   });
+
+  // Apply client-side sorting based on selected sort option
+  const products = useMemo(() => {
+    return sortJewelry(rawProducts, sortBy);
+  }, [rawProducts, sortBy]);
 
   const handleProductClick = (item) => {
     // Navigate to product detail page with retailer slug

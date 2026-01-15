@@ -74,22 +74,36 @@ const Header = ({ title, description }) => {
               transition={{ duration: 0.6 }}
               className={styles.iconGroup}
             >
-              <IconButton className={styles.iconButton} onClick={() => setSearchOpen(!searchOpen)}>
-                <FaSearch />
+              <IconButton 
+                className={styles.iconButton} 
+                onClick={() => setSearchOpen(!searchOpen)}
+                aria-label={searchOpen ? "Close search" : "Open search"}
+                aria-expanded={searchOpen}
+              >
+                <FaSearch aria-hidden="true" />
               </IconButton>
               
-              <IconButton className={styles.iconButton}>
-                <FaUser />
+              <IconButton 
+                className={styles.iconButton}
+                aria-label="User account"
+              >
+                <FaUser aria-hidden="true" />
               </IconButton>
 
-              <IconButton className={styles.iconButton}>
+              <IconButton 
+                className={styles.iconButton}
+                aria-label={`Wishlist with ${wishlistCount} items`}
+              >
                 <Badge badgeContent={wishlistCount} color="error">
-                  <FaHeart />
+                  <FaHeart aria-hidden="true" />
                 </Badge>
               </IconButton>
 
-              <IconButton className={styles.iconButton}>
-                <FaShoppingBag />
+              <IconButton 
+                className={styles.iconButton}
+                aria-label="Shopping bag"
+              >
+                <FaShoppingBag aria-hidden="true" />
               </IconButton>
             </motion.div>
           </Box>
@@ -102,11 +116,17 @@ const Header = ({ title, description }) => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             className={styles.searchContainer}
+            role="search"
           >
             <InputBase
               placeholder="Search for rings, necklaces, bracelets..."
               className={styles.searchInput}
-              startAdornment={<FaSearch className={styles.searchIcon} />}
+              startAdornment={<FaSearch className={styles.searchIcon} aria-hidden="true" />}
+              inputProps={{ 
+                'aria-label': 'Search jewelry products',
+                'type': 'search'
+              }}
+              autoFocus
             />
           </motion.div>
         )}

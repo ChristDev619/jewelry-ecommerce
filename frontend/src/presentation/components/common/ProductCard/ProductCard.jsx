@@ -1,6 +1,7 @@
-import { Card, CardContent, CardMedia, Typography, Box } from '@mui/material';
+import { Card, CardContent, Typography, Box, IconButton } from '@mui/material';
 import { FaHeart, FaRegHeart, FaTruck } from 'react-icons/fa';
 import { formatPrice } from '../../../../shared/utils/date.utils';
+import OptimizedImage from '../OptimizedImage';
 import styles from './ProductCard.module.css';
 
 /**
@@ -20,33 +21,45 @@ const ProductCard = ({
   };
 
   return (
-    <Card className={styles.productCard} onClick={onClick} elevation={0}>
+    <Card 
+      className={styles.productCard} 
+      onClick={onClick} 
+      elevation={0}
+      role="article"
+      aria-label={`${item.name} - ${formatPrice(item.price)}`}
+    >
       {/* Delivery Icon */}
       {showDeliveryIcon && (
-        <Box className={`${styles.iconContainer} ${styles.deliveryIcon}`}>
-          <FaTruck color="#8B7355" size={16} />
+        <Box 
+          className={`${styles.iconContainer} ${styles.deliveryIcon}`}
+          aria-label="Fast delivery available"
+          role="img"
+        >
+          <FaTruck color="#8B7355" size={16} aria-hidden="true" />
         </Box>
       )}
 
       {/* Wishlist Icon */}
-      <Box
+      <IconButton
         onClick={handleWishlistClick}
         className={`${styles.iconContainer} ${styles.wishlistIcon}`}
+        aria-label={isWishlisted ? "Remove from wishlist" : "Add to wishlist"}
+        size="small"
       >
         {isWishlisted ? (
-          <FaHeart color="#D32F2F" size={16} />
+          <FaHeart color="#D32F2F" size={16} aria-hidden="true" />
         ) : (
-          <FaRegHeart color="#666" size={16} />
+          <FaRegHeart color="#666" size={16} aria-hidden="true" />
         )}
-      </Box>
+      </IconButton>
 
       {/* Product Image */}
       <Box className={styles.imageContainer}>
-        <CardMedia
-          component="img"
-          image={item.images && item.images[0] || 'https://via.placeholder.com/400'}
-          alt={item.name}
+        <OptimizedImage
+          src={item.images && item.images[0] || 'https://via.placeholder.com/400'}
+          alt={`${item.name} - ${item.metal || ''} ${item.style || 'jewelry'}`}
           className={styles.productImage}
+          loading="lazy"
         />
 
         {/* Multiple Metals Indicator */}
@@ -60,20 +73,19 @@ const ProductCard = ({
       </Box>
 
       <CardContent className={styles.content}>
-        <Box className={styles.contentTop}>
-          {/* Product Name */}
-          <Typography className={styles.title}>
-            {item.name}
-          </Typography>
+        {/* Product Name */}
+        <Typography className={styles.title}>
+          {item.name}
+        </Typography>
 
+        {/* Price and Badge Row */}
+        <Box className={styles.priceRow}>
           {/* Price */}
           <Typography className={styles.price}>
             {formatPrice(item.price)}
           </Typography>
-        </Box>
 
-        {/* New Badge */}
-        <Box className={styles.badgeContainer}>
+          {/* New Badge */}
           {item.isNew && (
             <span className={styles.badge}>
               NEW
