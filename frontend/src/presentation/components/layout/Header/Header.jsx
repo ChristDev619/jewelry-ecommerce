@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Box, Typography, Container, IconButton, Badge, InputBase } from '@mui/material';
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import { FaHeart, FaSearch, FaUser, FaShoppingBag } from 'react-icons/fa';
 import useStore from '../../../store/store';
