@@ -1,0 +1,29 @@
+/**
+ * FilterChip Module Styles
+ * Scoped styles for filter chips
+ */
+
+.filterChip {
+  background-color: var(--color-background-light) !important;
+  border: 1.5px solid var(--color-border) !important;
+  font-weight: var(--font-weight-medium) !important;
+  font-size: var(--font-size-sm) !important;
+  height: 36px !important;
+  transition: var(--transition-fast) !important;
+}
+
+.filterChip:hover {
+  background-color: var(--color-background-dark) !important;
+  border-color: var(--color-secondary) !important;
+}
+
+/* Override MUI delete icon */
+.filterChip :global(.MuiChip-deleteIcon) {
+  color: var(--color-text-secondary);
+  transition: var(--transition-fast);
+}
+
+.filterChip :global(.MuiChip-deleteIcon:hover) {
+  color: var(--color-primary);
+}
+

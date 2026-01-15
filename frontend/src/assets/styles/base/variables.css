@@ -1,0 +1,115 @@
+/**
+ * CSS Custom Properties (Variables)
+ * Central place for all design tokens
+ */
+
+:root {
+  /* Colors - Primary */
+  --color-primary: #2d2d2d;
+  --color-primary-light: #4a4a4a;
+  --color-primary-dark: #1a1a1a;
+  
+  /* Colors - Secondary */
+  --color-secondary: #8b7355;
+  --color-secondary-light: #a68968;
+  --color-secondary-dark: #6b5842;
+  
+  /* Colors - Background */
+  --color-background: #fafaf8;
+  --color-background-light: #ffffff;
+  --color-background-dark: #e8e8e3;
+  
+  /* Colors - Text */
+  --color-text-primary: #2d2d2d;
+  --color-text-secondary: #666666;
+  --color-text-light: #999999;
+  
+  /* Colors - Accent */
+  --color-accent-gold: #d4af37;
+  --color-accent-rose: #b76e79;
+  --color-error: #d32f2f;
+  --color-success: #2e7d32;
+  
+  /* Colors - Borders */
+  --color-border: #e0e0e0;
+  --color-border-light: #f0f0f0;
+  --color-border-dark: #cccccc;
+  
+  /* Shadows */
+  --shadow-soft: 0 2px 15px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-elevated: 0 12px 40px rgba(0, 0, 0, 0.15);
+  --shadow-button: 0 2px 8px rgba(0, 0, 0, 0.1);
+  
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+  
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 50%;
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.4s ease;
+  --transition-all: all 0.3s ease;
+  
+  /* Typography - Font Families */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-heading: 'Playfair Display', Georgia, serif;
+  
+  /* Typography - Font Sizes */
+  --font-size-xs: 0.75rem;      /* 12px */
+  --font-size-sm: 0.875rem;     /* 14px */
+  --font-size-base: 1rem;       /* 16px */
+  --font-size-lg: 1.125rem;     /* 18px */
+  --font-size-xl: 1.25rem;      /* 20px */
+  --font-size-2xl: 1.5rem;      /* 24px */
+  --font-size-3xl: 2rem;        /* 32px */
+  --font-size-4xl: 2.5rem;      /* 40px */
+  --font-size-5xl: 3rem;        /* 48px */
+  
+  /* Typography - Font Weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* Typography - Line Heights */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.4;
+  --line-height-relaxed: 1.6;
+  
+  /* Z-Index Scale */
+  --z-index-base: 1;
+  --z-index-dropdown: 10;
+  --z-index-sticky: 100;
+  --z-index-fixed: 1000;
+  --z-index-modal: 10000;
+  --z-index-tooltip: 100000;
+  
+  /* Component Specific */
+  --card-height: 420px;
+  --card-image-height: 280px;
+  --card-content-height: 140px;
+  --header-height: 64px;
+  --filter-bar-height: auto;
+  
+  /* Breakpoints (for reference in JS) */
+  --breakpoint-xs: 320px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 960px;
+  --breakpoint-lg: 1280px;
+  --breakpoint-xl: 1920px;
+}
+

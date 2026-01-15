@@ -1,0 +1,134 @@
+/**
+ * Animation Utilities
+ * Keyframes and animation classes
+ */
+
+/* Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn var(--transition-normal) ease-in-out;
+}
+
+.fade-out {
+  animation: fadeOut var(--transition-normal) ease-in-out;
+}
+
+.slide-up {
+  animation: slideUp var(--transition-normal) ease-out;
+}
+
+.slide-down {
+  animation: slideDown var(--transition-normal) ease-out;
+}
+
+.scale-in {
+  animation: scaleIn var(--transition-normal) ease-out;
+}
+
+.pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Transition utilities */
+.transition-all {
+  transition: var(--transition-all);
+}
+
+.transition-fast {
+  transition: var(--transition-fast);
+}
+
+.transition-normal {
+  transition: var(--transition-normal);
+}
+
+.transition-slow {
+  transition: var(--transition-slow);
+}
+
+/* Hover effects */
+.hover-lift {
+  transition: transform var(--transition-normal);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+.hover-scale {
+  transition: transform var(--transition-normal);
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.hover-shadow {
+  transition: box-shadow var(--transition-normal);
+}
+
+.hover-shadow:hover {
+  box-shadow: var(--shadow-hover);
+}
+

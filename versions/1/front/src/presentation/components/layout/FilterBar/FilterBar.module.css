@@ -1,0 +1,211 @@
+/**
+ * FilterBar Module Styles
+ * Scoped styles for the main filtering interface
+ */
+
+.filterBar {
+  background: linear-gradient(135deg, #f8f7f4 0%, #ffffff 50%, #f8f7f4 100%);
+  border-bottom: 2px solid rgba(212, 175, 55, 0.15);
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.04),
+    0 1px 3px rgba(212, 175, 55, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.filterBar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+}
+
+/* Main Filter Row */
+.mainFilterRow {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) 0;
+  flex-wrap: wrap;
+}
+
+.filterLabel {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+}
+
+/* Filter Buttons */
+.filterButton {
+  text-transform: none !important;
+  color: var(--color-primary) !important;
+  border: 1.5px solid rgba(139, 115, 85, 0.25) !important;
+  border-radius: 8px !important;
+  padding: 10px 18px !important;
+  font-size: var(--font-size-sm) !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+  background: rgba(255, 255, 255, 0.8) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+.filterButton:hover {
+  border-color: rgba(212, 175, 55, 0.6) !important;
+  background: linear-gradient(135deg, rgba(248, 247, 244, 1) 0%, rgba(255, 255, 255, 1) 100%) !important;
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.15) !important;
+  transform: translateY(-1px);
+}
+
+.filterButton svg {
+  margin-left: var(--spacing-xs);
+  font-size: 12px;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+/* Delivery Toggle */
+.deliveryToggle {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.deliveryIcon {
+  color: var(--color-secondary);
+  font-size: 20px;
+}
+
+.deliveryText {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+/* Active Filters Row */
+.activeFiltersRow {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) 0;
+  flex-wrap: wrap;
+}
+
+.chipsContainer {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+  flex-grow: 1;
+  align-items: center;
+}
+
+.clearAllButton {
+  text-transform: uppercase !important;
+  color: var(--color-secondary) !important;
+  font-weight: var(--font-weight-semibold) !important;
+  font-size: var(--font-size-xs) !important;
+  padding: var(--spacing-xs) var(--spacing-sm) !important;
+  transition: var(--transition-fast) !important;
+}
+
+.clearAllButton:hover {
+  background-color: transparent !important;
+  text-decoration: underline !important;
+}
+
+/* Results Count */
+.resultsCount {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+/* Sort Section */
+.sortSection {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.sortLabel {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+}
+
+.sortSelect {
+  min-width: 180px;
+}
+
+/* Filter Menu */
+.menuContent {
+  padding: var(--spacing-md);
+  min-width: 220px;
+}
+
+.menuContentLarge {
+  padding: var(--spacing-md);
+  min-width: 240px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* Custom scrollbar for menu */
+.menuContentLarge::-webkit-scrollbar {
+  width: 6px;
+}
+
+.menuContentLarge::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+.menuContentLarge::-webkit-scrollbar-thumb {
+  background: var(--color-secondary);
+  border-radius: 3px;
+}
+
+.menuContentLarge::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary-dark);
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .mainFilterRow {
+    gap: var(--spacing-sm);
+  }
+  
+  .filterButton {
+    font-size: 0.8125rem !important;
+    padding: 6px 12px !important;
+  }
+  
+  .deliveryToggle {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 640px) {
+  .mainFilterRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .filterButton {
+    width: 100%;
+  }
+  
+  .sortSection {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .sortSelect {
+    flex: 1;
+  }
+}
+

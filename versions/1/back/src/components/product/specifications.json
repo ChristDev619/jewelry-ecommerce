@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_product_specifications",
+  "info": {
+    "displayName": "Product Specifications",
+    "description": "Detailed specifications for jewelry products"
+  },
+  "options": {},
+  "attributes": {
+    "weight": {
+      "type": "string"
+    },
+    "diamonds": {
+      "type": "string"
+    },
+    "gemstones": {
+      "type": "string"
+    },
+    "width": {
+      "type": "string"
+    },
+    "length": {
+      "type": "string"
+    },
+    "size": {
+      "type": "string"
+    },
+    "customNotes": {
+      "type": "text"
+    }
+  }
+}
+

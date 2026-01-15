@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_shared_social_links",
+  "info": {
+    "displayName": "Social Links",
+    "description": "Social media profile links"
+  },
+  "options": {},
+  "attributes": {
+    "facebook": {
+      "type": "string"
+    },
+    "instagram": {
+      "type": "string"
+    },
+    "twitter": {
+      "type": "string"
+    },
+    "pinterest": {
+      "type": "string"
+    },
+    "youtube": {
+      "type": "string"
+    },
+    "tiktok": {
+      "type": "string"
+    }
+  }
+}
+

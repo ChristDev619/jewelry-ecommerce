@@ -1,0 +1,7 @@
+/* App-specific styles */
+/* Most styling is handled by MUI and Tailwind */
+
+#root {
+  width: 100%;
+  margin: 0 auto;
+}

@@ -1,0 +1,103 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product",
+    "description": "Jewelry products for the e-commerce platform"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "price": {
+      "type": "decimal",
+      "required": true,
+      "min": 0
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "sku": {
+      "type": "string",
+      "unique": true
+    },
+    "inStock": {
+      "type": "boolean",
+      "default": true
+    },
+    "isNew": {
+      "type": "boolean",
+      "default": false
+    },
+    "popularity": {
+      "type": "integer",
+      "default": 0,
+      "min": 0,
+      "max": 100
+    },
+    "deliveryDays": {
+      "type": "integer",
+      "min": 0,
+      "default": 7
+    },
+    "retailer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::retailer.retailer",
+      "inversedBy": "products"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "products"
+    },
+    "metal": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::metal.metal",
+      "inversedBy": "products"
+    },
+    "style": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::style.style",
+      "inversedBy": "products"
+    },
+    "birthstoneMonth": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::birthstone.birthstone",
+      "inversedBy": "products"
+    },
+    "specifications": {
+      "type": "component",
+      "repeatable": false,
+      "component": "product.specifications"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}
+

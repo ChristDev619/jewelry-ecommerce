@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_retailer_shipping_policies",
+  "info": {
+    "displayName": "Shipping Policy",
+    "description": "Retailer shipping information and policies"
+  },
+  "options": {},
+  "attributes": {
+    "domesticShipping": {
+      "type": "boolean",
+      "default": true
+    },
+    "internationalShipping": {
+      "type": "boolean",
+      "default": false
+    },
+    "freeShippingThreshold": {
+      "type": "decimal"
+    },
+    "shippingCost": {
+      "type": "decimal"
+    },
+    "averageDeliveryDays": {
+      "type": "integer"
+    },
+    "details": {
+      "type": "richtext"
+    }
+  }
+}
+

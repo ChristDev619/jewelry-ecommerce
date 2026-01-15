@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_retailer_return_policies",
+  "info": {
+    "displayName": "Return Policy",
+    "description": "Retailer return and exchange policies"
+  },
+  "options": {},
+  "attributes": {
+    "returnWindow": {
+      "type": "integer",
+      "default": 30
+    },
+    "refundAvailable": {
+      "type": "boolean",
+      "default": true
+    },
+    "exchangeAvailable": {
+      "type": "boolean",
+      "default": true
+    },
+    "restockingFee": {
+      "type": "decimal"
+    },
+    "details": {
+      "type": "richtext"
+    }
+  }
+}
+

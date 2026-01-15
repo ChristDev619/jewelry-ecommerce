@@ -1,0 +1,44 @@
+/**
+ * ProductGrid Module Styles
+ * Scoped styles for the product grid layout
+ */
+
+.productGrid {
+  background: transparent;
+  padding-top: var(--spacing-2xl);
+  padding-bottom: var(--spacing-3xl);
+  min-height: 400px;
+  position: relative;
+  z-index: 1;
+}
+
+.gridContainer {
+  /* Grid styles are handled by MUI Grid component */
+}
+
+/* Empty State */
+.emptyState {
+  text-align: center;
+  padding-top: var(--spacing-3xl);
+  padding-bottom: var(--spacing-3xl);
+}
+
+.emptyTitle {
+  font-size: var(--font-size-3xl);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-md);
+}
+
+.emptyText {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .productGrid {
+    padding-top: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
+  }
+}
+

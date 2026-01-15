@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "metals",
+  "info": {
+    "singularName": "metal",
+    "pluralName": "metals",
+    "displayName": "Metal",
+    "description": "Metal types for jewelry (Gold, Platinum, Silver, etc.)"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "code": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "color": {
+      "type": "string"
+    },
+    "purity": {
+      "type": "string"
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product",
+      "mappedBy": "metal"
+    }
+  }
+}
+
