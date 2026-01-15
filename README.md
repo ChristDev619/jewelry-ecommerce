@@ -242,7 +242,7 @@ This project is licensed under the MIT License.
 
 ## 👨‍💻 Author
 
-Your Name - [@yourtwitter](https://twitter.com/yourtwitter)
+Christian Chindy - [@ChristDev619](https://github.com/ChristDev619)
 
 ## 🙏 Acknowledgments
 
