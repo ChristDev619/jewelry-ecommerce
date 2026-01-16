@@ -93,6 +93,11 @@
       "repeatable": false,
       "component": "product.specifications"
     },
+    "sizeVariants": {
+      "type": "component",
+      "repeatable": true,
+      "component": "product.size-variant"
+    },
     "seo": {
       "type": "component",
       "repeatable": false,

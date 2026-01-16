@@ -18,34 +18,32 @@ const cache = new InMemoryCache({
     Query: {
       fields: {
         products: {
-          // Merge strategy for paginated products
+          // Simple merge - just replace with incoming data
           keyArgs: ['filters', 'sort'],
-          merge(existing = { data: [] }, incoming) {
-            return {
-              ...incoming,
-              data: [...existing.data, ...incoming.data],
-            };
+          merge(existing, incoming) {
+            // For single product queries or direct fetches, just return incoming
+            return incoming;
           },
         },
       },
     },
-    ProductEntity: {
-      keyFields: ['id'],
+    Product: {
+      keyFields: ['documentId'],
     },
-    RetailerEntity: {
-      keyFields: ['id'],
+    Retailer: {
+      keyFields: ['documentId'],
     },
-    CategoryEntity: {
-      keyFields: ['id'],
+    Category: {
+      keyFields: ['documentId'],
     },
-    MetalEntity: {
-      keyFields: ['id'],
+    Metal: {
+      keyFields: ['documentId'],
     },
-    StyleEntity: {
-      keyFields: ['id'],
+    Style: {
+      keyFields: ['documentId'],
     },
-    BirthstoneEntity: {
-      keyFields: ['id'],
+    Birthstone: {
+      keyFields: ['documentId'],
     },
   },
 });

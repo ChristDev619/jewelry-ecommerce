@@ -1,0 +1,235 @@
+/**
+ * SizeSelector Component Styles
+ * Modern, elegant styling for jewelry size selection
+ */
+
+.sizeSelector {
+  width: 100%;
+  margin: 1.5rem 0;
+}
+
+/* Size Grid */
+.sizeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+/* Size Button */
+.sizeButton {
+  position: relative;
+  padding: 0.875rem 0.5rem;
+  background: #ffffff;
+  border: 2px solid #e5e5e5;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+}
+
+.sizeButton:hover:not(.disabled) {
+  border-color: #8B7355;
+  background: #faf9f7;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 115, 85, 0.15);
+}
+
+.sizeButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(139, 115, 85, 0.2);
+}
+
+/* Selected State */
+.sizeButton.selected {
+  background: #8B7355;
+  border-color: #8B7355;
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(139, 115, 85, 0.3);
+}
+
+.sizeButton.selected:hover {
+  background: #75614a;
+  border-color: #75614a;
+}
+
+/* Disabled/Unavailable State */
+.sizeButton.disabled {
+  background: #f5f5f5;
+  border-color: #e0e0e0;
+  color: #999;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.sizeButton.disabled .sizeLabel {
+  text-decoration: line-through;
+}
+
+/* Size Label */
+.sizeLabel {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Unavailable Mark (X) */
+.unavailableMark {
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  font-size: 0.75rem;
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+/* Low Stock Indicator */
+.lowStockDot {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  color: #ff9800;
+  font-size: 1.2rem;
+  line-height: 0;
+}
+
+/* Selected Size Info Panel */
+.selectedInfo {
+  background: linear-gradient(135deg, #faf9f7 0%, #ffffff 100%);
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-top: 1rem;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.infoContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.priceInfo,
+.availabilityInfo,
+.deliveryInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label {
+  font-size: 0.875rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.value {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Availability Badge */
+.availabilityBadge {
+  padding: 0.375rem 0.875rem;
+  border-radius: 20px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.availabilityBadge.inStock {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.availabilityBadge.lowStock {
+  background: #fff3e0;
+  color: #f57c00;
+}
+
+.availabilityBadge.madeToOrder {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+/* Size Guide */
+.sizeGuide {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.sizeGuideLink {
+  background: none;
+  border: none;
+  color: #8B7355;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0.5rem 1rem;
+  transition: color 0.2s ease;
+}
+
+.sizeGuideLink:hover {
+  color: #75614a;
+}
+
+.sizeGuideLink:focus {
+  outline: 2px solid #8B7355;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sizeGrid {
+    grid-template-columns: repeat(auto-fill, minmax(55px, 1fr));
+    gap: 0.5rem;
+  }
+
+  .sizeButton {
+    padding: 0.75rem 0.375rem;
+    font-size: 0.875rem;
+    min-height: 45px;
+  }
+
+  .selectedInfo {
+    padding: 1rem;
+  }
+
+  .infoContent {
+    gap: 0.625rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sizeGrid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .sizeButton {
+    padding: 0.625rem 0.25rem;
+    font-size: 0.8125rem;
+  }
+}
+

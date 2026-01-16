@@ -750,6 +750,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     retailer: Schema.Attribute.Relation<'manyToOne', 'api::retailer.retailer'>;
     seo: Schema.Attribute.Component<'shared.seo', false>;
+    sizeVariants: Schema.Attribute.Component<'product.size-variant', true>;
     sku: Schema.Attribute.String & Schema.Attribute.Unique;
     slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
     specifications: Schema.Attribute.Component<'product.specifications', false>;

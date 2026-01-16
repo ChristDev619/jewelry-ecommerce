@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_product_size_variants",
+  "info": {
+    "displayName": "Size Variant",
+    "description": "Product size with pricing, availability, and delivery information",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "size": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "decimal",
+      "required": true
+    },
+    "available": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "stockQuantity": {
+      "type": "integer",
+      "default": 0
+    },
+    "availabilityMessage": {
+      "type": "string",
+      "default": "In Stock"
+    },
+    "deliveryDays": {
+      "type": "integer",
+      "required": true,
+      "default": 5
+    },
+    "sku": {
+      "type": "string"
+    }
+  }
+}
+

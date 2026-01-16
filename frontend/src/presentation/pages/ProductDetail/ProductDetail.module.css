@@ -66,10 +66,38 @@
   margin: 0;
 }
 
+/* Price Section with Dynamic Updates */
+.priceSection {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin: 0.5rem 0;
+}
+
 .price {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--primary-color, #2563eb);
+  color: #8B7355;
+  transition: all 0.3s ease;
+}
+
+.originalPrice {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #999;
+  text-decoration: line-through;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .badges {
@@ -100,6 +128,8 @@
   color: #991b1b;
 }
 
+/* Section Titles */
+.sectionTitle,
 .description h2,
 .specifications h2,
 .retailer h2 {
@@ -107,6 +137,19 @@
   font-weight: 600;
   color: #111;
   margin-bottom: 0.75rem;
+}
+
+.sectionTitle {
+  margin-top: 0;
+}
+
+/* Size Section */
+.sizeSection {
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #faf9f7 0%, #ffffff 100%);
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  margin: 1rem 0;
 }
 
 .specifications ul {
@@ -135,27 +178,78 @@
   text-decoration: underline;
 }
 
+/* Delivery Section */
 .delivery {
-  padding: 1rem;
-  background: #f9fafb;
-  border-radius: 8px;
-  color: #666;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: linear-gradient(135deg, #e8f5e9 0%, #f1f8f4 100%);
+  border: 1px solid #c8e6c9;
+  border-radius: 12px;
+  color: #2e7d32;
+  margin: 1rem 0;
 }
 
+.deliveryIcon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.deliveryText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.deliveryText strong {
+  font-size: 1rem;
+  color: #1b5e20;
+}
+
+.lowStockWarning {
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  background: #fff3e0;
+  color: #e65100;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+/* Add to Cart Button */
 .addToCartButton {
-  padding: 1rem 2rem;
-  background: var(--primary-color, #2563eb);
+  padding: 1.25rem 2.5rem;
+  background: #8B7355;
   color: white;
   border: none;
-  border-radius: 8px;
-  font-size: 1.1rem;
+  border-radius: 12px;
+  font-size: 1.125rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(139, 115, 85, 0.2);
+  margin-top: 1rem;
 }
 
-.addToCartButton:hover {
-  background: #1d4ed8;
+.addToCartButton:hover:not(:disabled) {
+  background: #75614a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(139, 115, 85, 0.3);
+}
+
+.addToCartButton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.addToCartButton:disabled {
+  background: #d0d0d0;
+  color: #888;
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.6;
 }
 
 .loading,

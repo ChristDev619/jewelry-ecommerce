@@ -40,8 +40,20 @@ const JewelryListing = () => {
 
   const handleProductClick = (item) => {
     // Navigate to product detail page with retailer slug
+    console.log('Product clicked:', { 
+      slug: item.slug, 
+      retailer: item.retailer,
+      hasRetailerSlug: !!item.retailer?.slug 
+    });
+    
     if (item.retailer?.slug && item.slug) {
       navigate(`/retailers/${item.retailer.slug}/products/${item.slug}`);
+    } else {
+      console.warn('Missing navigation data:', {
+        hasSlug: !!item.slug,
+        hasRetailer: !!item.retailer,
+        hasRetailerSlug: !!item.retailer?.slug
+      });
     }
   };
 

@@ -51,6 +51,16 @@ export class ProductMapper {
       isNew: strapiProduct.isNew || false,
       popularity: strapiProduct.popularity || 0,
       createdAt: strapiProduct.createdAt ? new Date(strapiProduct.createdAt) : new Date(),
+      // Size variants
+      sizeVariants: strapiProduct.sizeVariants?.map(variant => ({
+        size: variant.size,
+        price: parseFloat(variant.price) || 0,
+        available: variant.available !== undefined ? variant.available : true,
+        stockQuantity: variant.stockQuantity || 0,
+        availabilityMessage: variant.availabilityMessage || 'In Stock',
+        deliveryDays: variant.deliveryDays || 7,
+        sku: variant.sku || null,
+      })) || [],
       // Additional Strapi-specific fields
       retailer: strapiProduct.retailer ? {
         id: strapiProduct.retailer.documentId,

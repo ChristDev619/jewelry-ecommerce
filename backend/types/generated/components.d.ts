@@ -1,5 +1,28 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ProductSizeVariant extends Struct.ComponentSchema {
+  collectionName: 'components_product_size_variants';
+  info: {
+    description: 'Product size with pricing, availability, and delivery information';
+    displayName: 'Size Variant';
+    icon: 'apps';
+  };
+  attributes: {
+    availabilityMessage: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'In Stock'>;
+    available: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    deliveryDays: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<5>;
+    price: Schema.Attribute.Decimal & Schema.Attribute.Required;
+    size: Schema.Attribute.String & Schema.Attribute.Required;
+    sku: Schema.Attribute.String;
+    stockQuantity: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
+  };
+}
+
 export interface ProductSpecifications extends Struct.ComponentSchema {
   collectionName: 'components_product_specifications';
   info: {
@@ -149,6 +172,7 @@ export interface SharedSocialLinks extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'product.size-variant': ProductSizeVariant;
       'product.specifications': ProductSpecifications;
       'retailer.return-policy': RetailerReturnPolicy;
       'retailer.shipping-policy': RetailerShippingPolicy;

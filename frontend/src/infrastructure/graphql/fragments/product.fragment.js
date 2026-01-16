@@ -40,6 +40,16 @@ export const PRODUCT_WITH_RELATIONS_FRAGMENT = gql`
       height
     }
     
+    sizeVariants {
+      size
+      price
+      available
+      stockQuantity
+      availabilityMessage
+      deliveryDays
+      sku
+    }
+    
     metal {
       documentId
       name
@@ -99,6 +109,16 @@ export const PRODUCT_DETAIL_FRAGMENT = gql`
       length
       size
       customNotes
+    }
+    
+    sizeVariants {
+      size
+      price
+      available
+      stockQuantity
+      availabilityMessage
+      deliveryDays
+      sku
     }
     
     metal {
