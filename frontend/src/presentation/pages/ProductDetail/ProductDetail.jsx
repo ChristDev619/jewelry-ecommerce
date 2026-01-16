@@ -10,7 +10,7 @@ import SizeSelector from '../../components/product/SizeSelector';
 import styles from './ProductDetail.module.css';
 
 function ProductDetail() {
-  const { retailerSlug, productSlug } = useParams();
+  const { productSlug } = useParams();
   const { product, loading, error } = useProductDetail(productSlug);
   const [selectedSize, setSelectedSize] = useState(null);
 
@@ -19,7 +19,9 @@ function ProductDetail() {
     if (product?.hasMultipleSizes && !selectedSize) {
       const firstAvailable = product.availableSizes[0];
       if (firstAvailable) {
-        setSelectedSize(firstAvailable);
+        setTimeout(() => {
+          setSelectedSize(firstAvailable);
+        }, 0);
       }
     }
   }, [product, selectedSize]);
